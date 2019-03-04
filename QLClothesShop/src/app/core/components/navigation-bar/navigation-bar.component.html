@@ -1,0 +1,95 @@
+<mat-toolbar color="primary" class="navigation-bar">
+
+  <mat-toolbar-row>
+
+    <button mat-icon-button (click)=" toggleSidenav.emit()">
+      <mat-icon>menu</mat-icon>
+    </button>
+
+    <span class="toolbar-title"> {{ 'THE CELLPHONE STORE' }} </span>
+
+
+    <div fxFlex fxLayout fxLayoutAlign="flex-end">
+
+      <div class="mr-3">
+        <ul fxLayout fxLayoutGap="20px" class="navigation-items">
+          <li>
+            <label *ngIf="authService.isLoggedIn">Hello {{userProfile.emailId}}</label>
+            <button mat-icon-button class="waves-light" [matMenuTriggerFor]="theme">
+              <mat-icon>brush</mat-icon>
+            </button>
+            <mat-menu #theme="matMenu">
+              <div class="row p-2" style="margin:0">
+                <div class="col-sm hover-effect" data-toggle="tooltip" data-placement="bottom" title="Purple Theme"
+                  style="padding: 0">
+                  <div class="color-container" (click)="onSetTheme('purple-theme')">
+                    <div class="colorDiv color-purple">
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm hover-effect" data-toggle="tooltip" data-placement="bottom" title="Dark Theme"
+                  style="padding: 0">
+                  <div class="color-container" (click)="onSetTheme('dark-theme')">
+                    <div class="colorDiv color-dark">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row p-2" style="margin:0">
+                <div class="col-sm hover-effect" data-toggle="tooltip" data-placement="bottom" title="Red Theme"
+                  style="padding: 0">
+                  <div class="color-container">
+                    <div class="colorDiv color-red" (click)="onSetTheme('red-theme')">
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm hover-effect" data-toggle="tooltip" data-placement="bottom" title="Blue Theme"
+                  style="padding: 0">
+                  <div class="color-container">
+                    <div class="colorDiv color-blue" (click)="onSetTheme('blue-theme')">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row p-2" style="margin:0">
+                <div class="col-sm hover-effect" data-toggle="tooltip" data-placement="bottom" title="Green Theme"
+                  style="padding: 0">
+                  <div class="color-container">
+                    <div class="colorDiv color-green" (click)="onSetTheme('green-theme')">
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm hover-effect" data-toggle="tooltip" data-placement="bottom" title="Teal Theme"
+                  style="padding: 0">
+                  <div class="color-container">
+                    <div class="colorDiv color-teal" (click)="onSetTheme('teal-theme')">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </mat-menu>
+          </li>
+
+          <li>
+            <button mat-icon-button class="waves-light" [matMenuTriggerFor]="auth">
+              <mat-icon>person_outline</mat-icon>
+            </button>
+            <mat-menu #auth="matMenu">
+                <button mat-menu-item [routerLink]="['/users']">
+                    <mat-icon>accessibility_new</mat-icon>
+                    <span>My Profile</span>
+                  </button>
+              <button mat-menu-item (click)="logout()">
+                <mat-icon>exit_to_app</mat-icon>
+                <span>Sign out</span>
+              </button>
+            </mat-menu>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+
+  </mat-toolbar-row>
+
+</mat-toolbar>

@@ -1,0 +1,44 @@
+<h1 class="header">Login with Firebase or Social Providers</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <form [formGroup]="loginForm">
+        <div class="form-group">
+          <mat-form-field>
+            <input type="email" formControlName="email" matInput class="form-control" placeholder="Enter your email">
+            <mat-error *ngIf="loginForm.controls['email'].errors?.required">Email must not be blank.</mat-error>
+            <mat-error *ngIf="loginForm.controls['email'].errors?.email">Email must not be in correct format.
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="form-group">
+          <mat-form-field>
+            <input type="password" class="form-control" matInput formControlName="password" placeholder="Enter your password">
+            <mat-error *ngIf="loginForm.controls['password'].errors?.required">Password must not be blank.</mat-error>
+          </mat-form-field>
+        </div>
+        <button type="submit" (click)="tryLogin(loginForm.value)" class="btn btn-default">Login</button>
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4 col-md-offset-4">
+      <button type="button" class="btn btn-primary btn-block" (click)="tryFacebookLogin()">Login with Facebook</button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4 col-md-offset-4">
+      <button type="button" class="btn btn-danger btn-block" (click)="tryGoogleLogin()">Login with Google</button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4 col-md-offset-4">
+      <button type="button" class="btn btn-info btn-block" (click)="tryTwitterLogin()">Login with Twitter</button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4 col-md-offset-4">
+      <p>No account yet? <a href="/register">Create an account</a></p>
+    </div>
+  </div>
+</div>

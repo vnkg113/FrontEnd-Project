@@ -1,0 +1,56 @@
+@import "../../../../assets/theme/colors.scss";
+@import "../../../../assets/theme/functions.scss";
+
+.navigation-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 998;
+  }
+
+.navigation-items {
+  list-style: none;
+}
+
+.color-container {
+    position: relative;
+    cursor: pointer;
+    width: 36px;
+    height: 36px;
+    margin: auto;
+    border-radius: 50%;
+    overflow: hidden;
+
+    .colorDiv {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      box-sizing: border-box;
+      border-radius: 50%;
+    }
+
+    .color-purple{
+      background: #9c27b0
+
+    }
+    .color-red{
+      background: #e91e63
+
+    }
+    .color-blue{
+      background: #3f51b5
+
+    }
+    .color-dark{
+      background: #000000
+    }
+    .color-green{
+      background: #4CAF50
+    }
+    .color-teal{
+      background: #009688;
+    }
+  }

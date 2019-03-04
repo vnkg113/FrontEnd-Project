@@ -1,0 +1,217 @@
+
+@import '~@angular/material/theming';
+
+@import "./open-sans";
+@import "./material.icons";
+
+
+$custom-typography: mat-typography-config(
+  $font-family: 'Open Sans, sans-serif'
+);
+
+@include mat-core($custom-typography);
+
+
+@import "./mat-variables";
+@import "./variables";
+@import "./palette";
+
+$primary: mat-palette($mat-black, 900);
+$accent:  mat-palette($mat-deep-orange, 500, A100, A400);
+$warn:    mat-palette($mat-red, 600);
+
+$theme: mat-light-theme($primary, $accent, $warn);
+
+@include angular-material-theme($theme);
+
+.dark-theme{
+  @include angular-material-theme($theme);
+}
+
+$purple-primary: mat-palette($mat-deep-purple);
+$purple-accent:  mat-palette($mat-purple, A200, A100, A400);
+$purple-warn:    mat-palette($mat-red, 600);
+
+$purple-theme:   mat-light-theme($purple-primary, $purple-accent, $purple-warn);
+
+.purple-theme {
+  @include angular-material-theme($purple-theme);
+}
+
+$green-primary: mat-palette($mat-green, 600);
+$green-accent:  mat-palette($mat-lime, A200, A100, A400);
+$green-warn:    mat-palette($mat-deep-orange, A400);
+
+$green-theme:   mat-light-theme($green-primary, $green-accent, $green-warn);
+
+.green-theme {
+  @include angular-material-theme($green-theme);
+}
+
+$blue-primary: mat-palette($mat-light-blue);
+$blue-accent:  mat-palette($mat-light-green, A200, A100, A400);
+$blue-warn:    mat-palette($mat-pink, A400);
+
+$blue-theme:   mat-light-theme($blue-primary, $blue-accent, $blue-warn);
+
+.blue-theme {
+  @include angular-material-theme($blue-theme);
+}
+
+$red-primary: mat-palette($mat-red);
+$red-accent:  mat-palette($mat-pink, A200, A100, A400);
+$red-warn:    mat-palette($mat-orange, 900);
+
+$red-theme:   mat-light-theme($red-primary, $red-accent, $red-warn);
+
+.red-theme {
+  @include angular-material-theme($red-theme);
+}
+
+$teal-primary: mat-palette($mat-teal);
+$teal-accent:  mat-palette($mat-amber, A200, A100, A400);
+$teal-warn:    mat-palette($mat-brown, 600);
+
+$teal-theme:   mat-light-theme($teal-primary, $teal-accent, $teal-warn);
+
+.teal-theme {
+  @include angular-material-theme($teal-theme);
+}
+//  top, right, bottom, and left
+
+html, body {
+  height: 100%;
+  overflow: hidden;
+}
+body {
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+}
+
+/*
+
+.mat-drawer-content {
+  overflow: hidden !important;
+}
+
+*/
+
+#app-content {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow: auto;
+}
+
+// TODO
+
+.list-item-active {
+  font-weight: bold;
+  color: mat-color($accent, darker) !important;
+  background: rgba(0, 0, 0, 0.04);
+}
+
+
+.grid-column-1 {
+  grid-column: 1;
+}
+
+.grid-column-1-span-2 {
+  grid-column: 1 / span 2;
+}
+
+.grid-column-2 {
+  grid-column: 2;
+}
+
+.grid-column-2-span-2 {
+  grid-column: 2 / span 2;
+}
+
+.grid-column-3 {
+  grid-column: 3;
+}
+
+.grid-column-4 {
+  grid-column: 4;
+}
+
+.grid-row-2 {
+  grid-row: 2;
+}
+
+.lib-component-title {
+
+  margin-top: $mat-toolbar-height-desktop + $crm-command-bar-height-desktop + $crm-component-title-margin;
+
+  @media ($mat-xsmall) {
+    margin-top: $mat-toolbar-height-mobile + $crm-command-bar-height-mobile + $crm-component-title-margin;
+  }
+
+  margin-bottom: $crm-component-title-margin;
+  text-align: center;
+}
+
+.mat-header-row {
+
+  background-color: #f5f5f5;
+}
+
+.mat-footer-row {
+  background-color: #f5f5f5;
+}
+
+a:active {
+  font-weight: bold;
+  color: mat-color($accent, darker) !important;
+}
+
+.active {
+  font-weight: bold;
+  color: mat-color($accent, darker) !important;
+}
+
+.anchor {
+  color: #488aff;
+  cursor: pointer;
+}
+
+#mainContainer {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow: auto;
+}
+
+.mat-subheader {
+  font-size: 18px;
+  font-weight: 900;
+}
+
+
+.mat-header-row {
+  background-color: #f5f5f5;
+}
+
+.mat-footer-row {
+  background-color: #f5f5f5;
+}
+
+a:active {
+  font-weight: bold;
+  color: mat-color($accent, darker) !important;
+}
+
+.active {
+  font-weight: bold;
+  color: mat-color($accent, darker) !important;
+}
+
+.anchor {
+  color: #488aff;
+  cursor: pointer;
+}
